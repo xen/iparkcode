@@ -1,0 +1,2 @@
+$python2.5 setup.py register
+$python2.5 setup.py sdist upload
