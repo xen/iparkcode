@@ -32,7 +32,7 @@ from setuptools import setup
 
 setup(
     name = "ipark.ereporter",
-    version = "0.2",
+    version = "0.2.1",
     description = 'Tipfy extension to simplify projects beta test, it simply send all exceptions traceback via'+\
       ' email to application administrators',
     long_description = __doc__,
@@ -44,7 +44,7 @@ setup(
     license = "BSD",
     scripts=[],
     install_requires = [
-        'tipfy==0.6', 
+        'tipfy>=0.6, <0.7', 
     ],
     classifiers = [
         'Development Status :: 4 - Beta',
