@@ -1,2 +1,5 @@
+One time step to setup your local environment:
 $python2.5 setup.py register
-$python2.5 setup.py sdist upload
+
+Upload egg instruction
+$python2.5 setup.py sdist --formats=gztar,zip upload
