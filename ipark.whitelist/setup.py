@@ -26,7 +26,7 @@ from distutils.core import setup
 
 setup(
     name = "ipark.whitelist",
-    version = "0.2.1",
+    version = "0.2.2",
     description = 'Tipfy middleware extension to whitelist access by IP',
     long_description = __doc__,
     author = 'Ilya Petrov, Mikhail Kashkin',
