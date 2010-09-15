@@ -48,7 +48,7 @@ setup(
     license = "BSD",
     scripts=[],
     install_requires = [
-        'tipfy>=0.6, <0.7', 
+      'tipfy>=0.6, <0.7', 
     ],
     classifiers = [
         'Development Status :: 4 - Beta',
