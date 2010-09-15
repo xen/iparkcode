@@ -14,7 +14,7 @@ To use this extension in your application follow few simple steps:
 config['tipfy'] = {
     'apps_installed': [
       ...
-      'ipark.common.ereporter',
+      'ipark.ereporter',
       ...
      ]
  }
@@ -23,3 +23,5 @@ config['tipfy'] = {
 config['ipark.ereporter.ereporter'] = {
      'email' : 'XXX@domain.com', # Use developer's email as it is free to send 
 }
+
+# 
