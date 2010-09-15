@@ -48,14 +48,20 @@ def register_logger(logger = None):
   return handler
 
 
+try:
+  get_config(__name__, "email")
+  print "XXX: Config variables path was changed opdate your config.py and change to ipark.ereporter"
+except:
+  pass
+  
 class SendReport(RequestHandler):
   def post(self):
     trace = self.request.form.get("trace")
     subject = self.request.form.get("subject")
 
     mail.send_mail(
-        sender = get_config(__name__, "email"),
-        to = get_config(__name__, "email"),
+        sender = get_config('ipark.ereporter', "email"),
+        to = get_config('ipark.ereporter', "email"),
         subject = "[trace] %s" % subject,
         body = trace,
     )

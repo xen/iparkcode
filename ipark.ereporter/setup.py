@@ -1,11 +1,12 @@
-"""ipark.ereporter
-================
+"""
+ipark.ereporter
+===============
 
 Usefull tipfy extension that send developer every exeption traceback report by email. 
 Its very handy when you beta test your projects and dont sure if something is going wrong.
 
 Setup
-------
+-----
 
 To use this extension in your application follow few simple steps:
 
@@ -21,17 +22,21 @@ To use this extension in your application follow few simple steps:
      ]
    }
   #
-  config['ipark.ereporter.ereporter'] = {
+  config['ipark.ereporter'] = {
      'email' : 'XXX@domain.com', # Use developer's email as it is free to send 
   }
 
+Changes
+=======
+
+0.3: config variables path was trimmed, use ipark.ereporter instead of ipark.ereporter.ereporter
 
 """
 from setuptools import setup
 
 setup(
     name = "ipark.ereporter",
-    version = "0.2.3",
+    version = "0.3",
     description = 'Tipfy extension to simplify projects beta test, it simply send all exceptions traceback via'+\
       ' email to application administrators',
     long_description = __doc__,

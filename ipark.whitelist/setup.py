@@ -1,11 +1,11 @@
 """
 ipark.whitelist
-================
+===============
 
 tipfy middleware that restrict access to site from any IP unless it from white list.
 
 Setup
-------
+-----
 
 To use this extension in your application follow few simple steps:
 
@@ -26,8 +26,9 @@ from distutils.core import setup
 
 setup(
     name = "ipark.whitelist",
-    version = "0.2.0",
+    version = "0.2.1",
     description = 'Tipfy middleware extension to whitelist access by IP',
+    long_description = __doc__,
     author = 'Ilya Petrov, Mikhail Kashkin',
     author_email = 'mk@iparkcorp.com',
     url = 'http://code.google.com/p/iparkcode/',
