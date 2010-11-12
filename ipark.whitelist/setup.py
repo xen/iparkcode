@@ -15,9 +15,11 @@ To use this extension in your application follow few simple steps:
   #
   config['ipark.whitelist'] = {
     # use %  as mask
-    'allow_ips' : [ '192.168.1.%', 
-        '195.138.76.153', 
-        '127.0.0.1', 
+    'allow_ips' : [ '192.168.1.%',
+        '195.138.76.153',
+        '127.0.0.1',
+        ],
+    'allow_paths' : ['/path1', '/path2','/%/path3'],
   }
 """
 
@@ -26,18 +28,18 @@ from distutils.core import setup
 
 setup(
     name = "ipark.whitelist",
-    version = "0.2.5",
+    version = "0.2.6",
     description = 'Tipfy middleware extension to whitelist access by IP',
     long_description = __doc__,
     zip_safe = False,
-    author = 'Ilya Petrov, Mikhail Kashkin',
+    author = 'Ilya Petrov, Mikhail Kashkin, Anton Oprya',
     author_email = 'mk@iparkcorp.com',
     url = 'http://code.google.com/p/iparkcode/',
     packages = ['ipark', 'ipark.whitelist', ],
     license = "BSD",
-    scripts=[],
+    scripts = [],
     install_requires = [
-      'tipfy>=0.6, <0.7', 
+      'tipfy>=0.6, <0.7',
     ],
     classifiers = [
         'Development Status :: 4 - Beta',
