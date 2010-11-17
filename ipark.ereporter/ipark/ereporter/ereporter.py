@@ -1,9 +1,9 @@
 import os
-from google.appengine.api.labs.taskqueue import Task
 import logging
 from tipfy import RequestHandler, Response, get_config, Tipfy
 from google.appengine.api import mail
 from google.appengine.ext.ereporter import ExceptionRecordingHandler
+from google.appengine.ext.deferred import defer
 from pprint import pformat
 
 def report(exc_info):
@@ -31,11 +31,7 @@ class Handler(logging.Handler):
     try:
       trace, subject = report(record.exc_info)
 
-      t = Task(
-          url = "/internal/ereporter",
-          params = dict(trace = trace, subject = subject),
-      )
-      t.add("error-report")
+      defer(send_report, trace, subject)
     except:
       pass
 
@@ -47,23 +43,16 @@ def register_logger(logger = None):
   logger.addHandler(handler)
   return handler
 
-
 try:
   get_config(__name__, "email")
   print "XXX: Config variables path was changed opdate your config.py and change to ipark.ereporter"
 except:
   pass
-  
-class SendReport(RequestHandler):
-  def post(self):
-    trace = self.request.form.get("trace")
-    subject = self.request.form.get("subject")
 
-    mail.send_mail(
-        sender = get_config('ipark.ereporter', "email"),
-        to = get_config('ipark.ereporter', "email"),
-        subject = "[trace] %s" % subject,
-        body = trace,
-    )
-
-    return Response("nyyaaa")
+def send_report(trace, subject):
+  mail.send_mail(
+      sender = get_config('ipark.ereporter', "email"),
+      to = get_config('ipark.ereporter', "email"),
+      subject = "[trace] %s" % subject,
+      body = trace,
+  )

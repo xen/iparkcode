@@ -29,6 +29,8 @@ To use this extension in your application follow few simple steps:
 Changes
 =======
 
+0.3.1: use defer unstead of task
+
 0.3: config variables path was trimmed, use ipark.ereporter instead of ipark.ereporter.ereporter
 
 """
@@ -36,7 +38,7 @@ from setuptools import setup
 
 setup(
     name = "ipark.ereporter",
-    version = "0.3",
+    version = "0.3.1",
     description = 'Tipfy extension to simplify projects beta test, it simply send all exceptions traceback via'+\
       ' email to application administrators',
     long_description = __doc__,
